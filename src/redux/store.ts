@@ -1,7 +1,10 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import payReducer from './PaySlice';
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    pay: payReducer,
+  },
 });
 
 export type AppDispatch = typeof store.dispatch;
