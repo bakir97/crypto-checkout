@@ -1,7 +1,8 @@
 import React from 'react';
+import { Pay } from './features/Pay';
 
-function App() {
-  return <div className='App'></div>;
-}
+const App = () => {
+  return <Pay />;
+};
 
 export default App;
