@@ -26,6 +26,7 @@ export const PaySlice = createSlice({
 });
 
 export const activeStep = (state: RootState) => state.pay.step;
+export const payData = (state: RootState) => state.pay.data;
 
 export const { stepChange } = PaySlice.actions;
 

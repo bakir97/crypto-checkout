@@ -14,4 +14,5 @@ export const BitPayLogo = styled.img.attrs({
 })`
   width: 129px;
   height: 46px;
+  margin-top: 5px;
 `;

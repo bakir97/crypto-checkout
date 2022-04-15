@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 type TitleProps = { marginBottom?: number };
 type TextProps = { fontWeight?: number };
+type LabelProps = { marginBottom?: number; marginTop?: number };
 
 export const Text = styled.p<TextProps>`
   font-weight: ${({ fontWeight = 400 }) => fontWeight};
@@ -11,13 +12,14 @@ export const Text = styled.p<TextProps>`
   margin: 0;
 `;
 
-export const SubTitle = styled.h3<TitleProps>`
+export const Label = styled.h3<LabelProps>`
   font-weight: 500;
   font-size: 17px;
   line-height: 24px;
   color: ${({ color = '#3F4048' }) => color};
   margin: 0;
   margin-bottom: ${({ marginBottom = 0 }) => marginBottom}px;
+  margin-top: ${({ marginTop = 0 }) => marginTop}px;
 `;
 
 export const Title = styled.h1<TitleProps>`
