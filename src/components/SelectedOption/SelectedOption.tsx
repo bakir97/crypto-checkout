@@ -11,19 +11,21 @@ type SelectedOptionProps = {
   value: string;
   disabled?: boolean;
   onClick?: () => void;
-  leftIcon?: React.ReactNode;
+  LeftIcon?: React.FunctionComponent;
 };
 
 export const SelectedOption = ({
   value,
   disabled,
   onClick,
-  leftIcon,
+  LeftIcon,
 }: SelectedOptionProps) => {
   return (
     <OptionContainer height={52}>
       <ValueContainer>
-        {leftIcon ?? (
+        {LeftIcon ? (
+          <LeftIcon />
+        ) : (
           <CheckContainer>
             <CheckIcon />
           </CheckContainer>

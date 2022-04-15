@@ -5,6 +5,8 @@ export const PayStepsContainer = styled.div`
   flex: 1.36;
   background-color: #f9f9f9;
   padding: 38px 50px;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const SelectCryptoContainer = styled.div`

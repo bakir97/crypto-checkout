@@ -9,7 +9,6 @@ export const Text = styled.p<TextProps>`
   font-size: 14px;
   line-height: 22px;
   color: ${({ color = '#53545A' }) => color};
-  margin: 0;
 `;
 
 export const Label = styled.h3<LabelProps>`
@@ -17,7 +16,6 @@ export const Label = styled.h3<LabelProps>`
   font-size: 17px;
   line-height: 24px;
   color: ${({ color = '#3F4048' }) => color};
-  margin: 0;
   margin-bottom: ${({ marginBottom = 0 }) => marginBottom}px;
   margin-top: ${({ marginTop = 0 }) => marginTop}px;
 `;
@@ -27,6 +25,5 @@ export const Title = styled.h1<TitleProps>`
   font-size: 26px;
   line-height: 34px;
   color: ${({ color = '#3F4048' }) => color};
-  margin: 0;
   margin-bottom: ${({ marginBottom = 0 }) => marginBottom}px;
 `;

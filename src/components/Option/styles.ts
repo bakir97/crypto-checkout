@@ -4,6 +4,9 @@ import check from '../../assets/check.png';
 type OptionContainerProps = {
   height?: number;
   cursor?: string;
+  marginTop?: number;
+  hasBorder?: boolean;
+  hasShadow?: boolean;
 };
 
 export const OptionContainer = styled.div<OptionContainerProps>`
@@ -11,11 +14,13 @@ export const OptionContainer = styled.div<OptionContainerProps>`
   justify-content: space-between;
   padding-left: 24px;
   padding-right: 20px;
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: ${({ hasShadow = true }) =>
+    hasShadow && '0px 1px 10px rgba(0, 0, 0, 0.05)'};
   height: ${({ height = 70 }) => height}px;
   align-items: center;
-  margin-top: 20px;
-  cursor: ${({ cursor = 'none' }) => cursor};
+  margin-top: ${({ marginTop = 20 }) => marginTop}px;
+  cursor: ${({ cursor = 'normal' }) => cursor};
+  border-bottom: ${({ hasBorder }) => hasBorder && '1px solid #EDEFF0'};
 `;
 
 export const ValueContainer = styled.div`
@@ -45,4 +50,12 @@ export const OptionLabel = styled.p`
   color: #53545a;
   margin: 0;
   font-family: 'Roboto Condensed', sans-serif;
+`;
+
+export const Circle = styled.div`
+  background-color: #edeff0;
+  width: 25px;
+  height: 25px;
+  border-radius: 12.5px;
+  margin-right: 11px;
 `;

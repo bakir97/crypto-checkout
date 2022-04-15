@@ -8,7 +8,7 @@ type SelectedOptionProps = {
 
 export const Checkout = ({ label, value }: SelectedOptionProps) => {
   return (
-    <OptionContainer>
+    <OptionContainer marginTop={0}>
       <ValueContainer>
         <OptionLabel>{label}</OptionLabel>
         <CheckoutValue>{value}</CheckoutValue>
