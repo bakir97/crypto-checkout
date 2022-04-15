@@ -5,6 +5,7 @@ type ButtonProps = {
   onClick: () => void;
   align?: align;
   marginTop?: number;
+  disabled?: boolean;
 };
 
 export const Button = ({
@@ -12,9 +13,15 @@ export const Button = ({
   onClick,
   align,
   marginTop = 0,
+  disabled,
 }: ButtonProps) => {
   return (
-    <ButtonContainer onClick={onClick} align={align} marginTop={marginTop}>
+    <ButtonContainer
+      onClick={onClick}
+      align={align}
+      marginTop={marginTop}
+      disabled={disabled}
+    >
       <ButtonText>{label}</ButtonText>
     </ButtonContainer>
   );

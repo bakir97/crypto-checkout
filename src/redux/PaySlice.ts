@@ -1,12 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { cryptoCurrencyModel } from '../mockData';
+import { OptionsModel } from '../mockData';
 import { RootState } from './store';
 
+export type OptionsKeyModel = 'cryptoCurrency' | 'promo';
+
+type OptionsStateModel = null | OptionsModel;
 export interface PayState {
   step: number;
   data: {
     paymentMethod: string;
-    cryptoCurrency: null | cryptoCurrencyModel;
+    cryptoCurrency: OptionsStateModel;
+    promo: OptionsStateModel;
   };
 }
 
@@ -15,6 +19,7 @@ const initialState: PayState = {
   data: {
     paymentMethod: 'Crypto currency',
     cryptoCurrency: null,
+    promo: null,
   },
 };
 
@@ -25,11 +30,16 @@ export const PaySlice = createSlice({
     stepChange: (state, action: PayloadAction<number>) => {
       state.step = action.payload;
     },
-    cryptoChange: (state, action: PayloadAction<cryptoCurrencyModel>) => {
-      if (state.data.cryptoCurrency === action.payload) {
-        state.data.cryptoCurrency = null;
+    optionChange: (
+      state,
+      action: PayloadAction<{ option: OptionsModel; name: OptionsKeyModel }>
+    ) => {
+      const { option, name } = action.payload;
+      const stateOption = state.data[name];
+      if (stateOption && stateOption.id === option.id) {
+        state.data[name] = null;
       } else {
-        state.data.cryptoCurrency = action.payload;
+        state.data[name] = option;
       }
     },
   },
@@ -38,6 +48,6 @@ export const PaySlice = createSlice({
 export const activeStep = (state: RootState) => state.pay.step;
 export const payData = (state: RootState) => state.pay.data;
 
-export const { stepChange, cryptoChange } = PaySlice.actions;
+export const { stepChange, optionChange } = PaySlice.actions;
 
 export default PaySlice.reducer;

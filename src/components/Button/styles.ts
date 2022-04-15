@@ -23,6 +23,13 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   width: 132px;
   align-self: ${({ align = 'flex-start' }) => align};
   margin-top: ${({ marginTop }) => marginTop}px;
+
+  ${({ disabled }) =>
+    disabled &&
+    `
+    background: grey;
+    cursor: not-allowed;
+  `}
 `;
 
 export const ButtonText = styled.p`

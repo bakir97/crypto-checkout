@@ -9,8 +9,3 @@ export const cryptoCurrenciesMock = [
   // { label: 'LUNA', id: 8 },
   // { label: 'AXS', id: 9 },
 ];
-
-export type cryptoCurrencyModel = {
-  id: number;
-  label: string;
-};
