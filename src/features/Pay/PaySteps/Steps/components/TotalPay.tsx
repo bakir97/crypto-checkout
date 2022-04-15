@@ -1,4 +1,4 @@
-import { Label } from '../../../../components';
+import { Checkout, Label } from '../../../../../components';
 
 export const TotalPay = ({ marginTop = 29 }) => {
   return (
@@ -6,6 +6,7 @@ export const TotalPay = ({ marginTop = 29 }) => {
       <Label marginTop={marginTop} marginBottom={19}>
         Total
       </Label>
+      <Checkout label={'BTC'} value={0.0241} />
     </>
   );
 };

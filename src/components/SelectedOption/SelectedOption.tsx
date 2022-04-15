@@ -1,11 +1,11 @@
-import { Text } from '../Texts';
 import {
-  Change,
+  OptionContainer,
+  ValueContainer,
   CheckContainer,
   CheckIcon,
-  SelectedOptionContainer,
-  ValueContainer,
-} from './styles';
+} from '../Option/styles';
+import { Text } from '../Texts';
+import { Change } from './styles';
 
 type SelectedOptionProps = {
   value: string;
@@ -21,7 +21,7 @@ export const SelectedOption = ({
   leftIcon,
 }: SelectedOptionProps) => {
   return (
-    <SelectedOptionContainer>
+    <OptionContainer height={52}>
       <ValueContainer>
         {leftIcon ?? (
           <CheckContainer>
@@ -37,6 +37,6 @@ export const SelectedOption = ({
           Change
         </Text>
       </Change>
-    </SelectedOptionContainer>
+    </OptionContainer>
   );
 };

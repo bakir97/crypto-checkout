@@ -1,7 +1,7 @@
 import { useAppSelector } from '../../../../redux/hooks';
 import { activeStep } from '../../../../redux/PaySlice';
 import { SelectCrypto } from './SelectCrypto';
-import { SelectedValues } from './SelectedValues';
+import { SelectedValues } from './components/SelectedValues';
 
 export const Steps = () => {
   const count = useAppSelector(activeStep);
