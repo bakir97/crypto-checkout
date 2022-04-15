@@ -6,6 +6,7 @@ type ButtonProps = {
   align?: align;
   marginTop?: number;
   disabled?: boolean;
+  width?: number;
 };
 
 export const Button = ({
@@ -14,6 +15,7 @@ export const Button = ({
   align,
   marginTop = 0,
   disabled,
+  width = 132,
 }: ButtonProps) => {
   return (
     <ButtonContainer
@@ -21,6 +23,7 @@ export const Button = ({
       align={align}
       marginTop={marginTop}
       disabled={disabled}
+      width={width}
     >
       <ButtonText>{label}</ButtonText>
     </ButtonContainer>

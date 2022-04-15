@@ -1,15 +1,14 @@
 import { Button, Label } from '../../../../components';
-import { promosMock } from '../../../../mockData';
+import { TextCopy } from '../../../../components/TextCopy';
 import { useAppDispatch } from '../../../../redux/hooks';
 import { stepChange } from '../../../../redux/PaySlice';
-import { Options } from './components/Options';
 import { TotalPay } from './components/TotalPay';
 
-export const SelectPromo = () => {
+export const SendPayment = () => {
   const dispatch = useAppDispatch();
 
   const handleOnNextClick = () => {
-    dispatch(stepChange(3));
+    dispatch(stepChange(4));
   };
 
   return (
@@ -18,12 +17,12 @@ export const SelectPromo = () => {
       <Label marginTop={36} marginBottom={15}>
         Select Promo
       </Label>
-      <Options options={promosMock} name='promo' />
+      <TextCopy text='0xa81fsdjka7fds2231kx09766' />
       <Button
         label='next'
         onClick={handleOnNextClick}
         align='flex-end'
-        marginTop={48}
+        marginTop={42}
       />
     </>
   );

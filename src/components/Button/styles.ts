@@ -5,6 +5,7 @@ export type align = 'flex-end' | 'center' | 'flex-start';
 type ButtonContainerProps = {
   align?: align;
   marginTop: number;
+  width: number;
 };
 export const ButtonContainer = styled.button<ButtonContainerProps>`
   all: unset;
@@ -20,7 +21,7 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
     #4077c1 100%
   );
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-  width: 132px;
+  width: ${({ width }) => width}px;
   align-self: ${({ align = 'flex-start' }) => align};
   margin-top: ${({ marginTop }) => marginTop}px;
 

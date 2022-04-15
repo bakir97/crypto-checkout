@@ -4,7 +4,7 @@ import { activeStep, payData, stepChange } from '../../../../../redux/PaySlice';
 import { BitcoinLogo } from '../../styles';
 
 export const SelectedValues = () => {
-  const { paymentMethod, cryptoCurrency } = useAppSelector(payData);
+  const { paymentMethod, cryptoCurrency, promo } = useAppSelector(payData);
   const dispatch = useAppDispatch();
   const currentStep = useAppSelector(activeStep);
 
@@ -18,6 +18,12 @@ export const SelectedValues = () => {
       {currentStep > 1 && (
         <SelectedOption
           value={cryptoCurrency?.label!}
+          onClick={() => handleOptionPress(1)}
+        />
+      )}
+      {currentStep > 2 && (
+        <SelectedOption
+          value={promo?.label!}
           onClick={() => handleOptionPress(1)}
         />
       )}

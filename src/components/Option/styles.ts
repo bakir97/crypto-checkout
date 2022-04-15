@@ -21,6 +21,7 @@ export const OptionContainer = styled.div<OptionContainerProps>`
   margin-top: ${({ marginTop = 20 }) => marginTop}px;
   cursor: ${({ cursor = 'normal' }) => cursor};
   border-bottom: ${({ hasBorder }) => hasBorder && '1px solid #EDEFF0'};
+  background-color: #fff;
 `;
 
 export const ValueContainer = styled.div`
