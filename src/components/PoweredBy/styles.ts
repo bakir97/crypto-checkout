@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import bitpay from '../../assets/bitpay.png';
+import bitpay from '../../assets/bitpay.svg';
 
 export const PoweredByContainer = styled.div`
   margin-top: 34px;

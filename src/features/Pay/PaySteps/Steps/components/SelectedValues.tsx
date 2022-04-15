@@ -24,7 +24,7 @@ export const SelectedValues = () => {
       {currentStep > 2 && (
         <SelectedOption
           value={promo?.label!}
-          onClick={() => handleOptionPress(1)}
+          onClick={() => handleOptionPress(2)}
         />
       )}
     </div>

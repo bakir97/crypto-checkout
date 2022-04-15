@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import bitcoin from '../../../assets/bitcoin.png';
+import bitcoin from '../../../assets/bitcoin.svg';
 
 export const PayStepsContainer = styled.div`
   flex: 1.36;

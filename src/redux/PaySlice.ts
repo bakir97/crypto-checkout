@@ -36,18 +36,19 @@ export const PaySlice = createSlice({
     ) => {
       const { option, name } = action.payload;
       const stateOption = state.data[name];
-      if (stateOption && stateOption.id === option.id) {
+      if (stateOption?.id === option.id) {
         state.data[name] = null;
       } else {
         state.data[name] = option;
       }
     },
+    resetState: () => initialState,
   },
 });
 
 export const activeStep = (state: RootState) => state.pay.step;
 export const payData = (state: RootState) => state.pay.data;
 
-export const { stepChange, optionChange } = PaySlice.actions;
+export const { stepChange, optionChange, resetState } = PaySlice.actions;
 
 export default PaySlice.reducer;

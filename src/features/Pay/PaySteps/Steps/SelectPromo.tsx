@@ -1,16 +1,14 @@
 import { Button, Label } from '../../../../components';
 import { promosMock } from '../../../../mockData';
-import { useAppDispatch } from '../../../../redux/hooks';
-import { stepChange } from '../../../../redux/PaySlice';
+import { useAppSelector } from '../../../../redux/hooks';
+import { payData } from '../../../../redux/PaySlice';
 import { Options } from './components/Options';
 import { TotalPay } from './components/TotalPay';
+import { useStepChange } from './useStepChange';
 
 export const SelectPromo = () => {
-  const dispatch = useAppDispatch();
-
-  const handleOnNextClick = () => {
-    dispatch(stepChange(3));
-  };
+  const { promo } = useAppSelector(payData);
+  const { handleStepChange } = useStepChange();
 
   return (
     <>
@@ -21,9 +19,10 @@ export const SelectPromo = () => {
       <Options options={promosMock} name='promo' />
       <Button
         label='next'
-        onClick={handleOnNextClick}
+        onClick={() => handleStepChange(3)}
         align='flex-end'
         marginTop={48}
+        disabled={!promo}
       />
     </>
   );

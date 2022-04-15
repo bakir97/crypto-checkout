@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
 type TitleProps = { marginBottom?: number };
-type TextProps = { fontWeight?: number };
+type TextProps = {
+  fontWeight?: number;
+  marginBottom?: number;
+  textAlign?: 'left' | 'center' | 'right';
+};
 type LabelProps = { marginBottom?: number; marginTop?: number };
 
 export const Text = styled.p<TextProps>`
@@ -9,6 +13,8 @@ export const Text = styled.p<TextProps>`
   font-size: 14px;
   line-height: 22px;
   color: ${({ color = '#53545A' }) => color};
+  margin-bottom: ${({ marginBottom = 0 }) => marginBottom}px;
+  text-align: ${({ textAlign = 'left' }) => textAlign};
 `;
 
 export const Label = styled.h3<LabelProps>`

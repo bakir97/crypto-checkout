@@ -1,17 +1,14 @@
 import { Button, Label } from '../../../../components';
 import { cryptoCurrenciesMock } from '../../../../mockData';
-import { useAppDispatch, useAppSelector } from '../../../../redux/hooks';
-import { payData, stepChange } from '../../../../redux/PaySlice';
+import { useAppSelector } from '../../../../redux/hooks';
+import { payData } from '../../../../redux/PaySlice';
 import { Options } from './components/Options';
 import { TotalPay } from './components/TotalPay';
+import { useStepChange } from './useStepChange';
 
 export const SelectCrypto = () => {
   const { cryptoCurrency } = useAppSelector(payData);
-  const dispatch = useAppDispatch();
-
-  const handleOnNextClick = () => {
-    dispatch(stepChange(2));
-  };
+  const { handleStepChange } = useStepChange();
 
   return (
     <>
@@ -22,7 +19,7 @@ export const SelectCrypto = () => {
       <TotalPay />
       <Button
         label='next'
-        onClick={handleOnNextClick}
+        onClick={() => handleStepChange(2)}
         align='flex-end'
         marginTop={54}
         disabled={!cryptoCurrency}

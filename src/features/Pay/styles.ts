@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const PayContainer = styled.div`
   display: flex;
   min-height: 100vh;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const Shadow = styled.div`
